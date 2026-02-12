@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Pro | Create & Play</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <div class="container">
+        <section id="home-page" class="card active">
+            <h1 class="logo">BIREENA <span>INFO TECH</span></h1>
+            <h2>Online Quiz Maker</h2>
+            <p>Design, share, and track quizzes with ease.</p>
+            <div class="btn-group">
+                <button onclick="showSection('creator-page')" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Create a Quiz
+                </button>
+                <button onclick="showSection('library-page')" class="btn btn-secondary">
+                    <i class="fas fa-play"></i> Take a Quiz
+                </button>
+            </div>
+        </section>
+
+        <section id="creator-page" class="card">
+            <button onclick="showSection('home-page')" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+            <h3><i class="fas fa-tools"></i> Quiz Builder</h3>
+            <div class="form-group">
+                <input type="text" id="quiz-title" placeholder="Quiz Title (e.g. JavaScript Basics)">
+                <div id="questions-container">
+                    <div class="q-input-group">
+                        <input type="text" placeholder="Enter Question" class="q-text">
+                        <input type="text" placeholder="Option 1" class="opt">
+                        <input type="text" placeholder="Option 2" class="opt">
+                        <input type="text" placeholder="Correct Answer" class="ans">
+                    </div>
+                </div>
+                <button class="btn-small" onclick="addQuestionField()">+ Add More Questions</button>
+                <button class="btn btn-primary full-width" onclick="saveQuiz()">Save & Publish Quiz</button>
+            </div>
+        </section>
+
+        <section id="play-page" class="card">
+            <div id="quiz-display">
+                <div class="timer-bar"><div id="timer-progress"></div></div>
+                <h3 id="current-q-title">Question goes here?</h3>
+                <div id="options-grid" class="options-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="result-page" class="card">
+            <i class="fas fa-trophy trophy-icon"></i>
+            <h3>Quiz Completed!</h3>
+            <div class="score-display">Your Score: <span id="final-score">0</span></div>
+            <button onclick="location.reload()" class="btn btn-primary">Try Again</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
