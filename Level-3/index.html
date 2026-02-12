@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bireena Premium Store | Indian Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+        .hero-gradient { background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-800">BIREENA <span class="text-orange-500">SHOP</span></h1>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-blue-600">Home</a>
+                <a href="#" class="hover:text-blue-600">Categories</a>
+                <a href="#" class="hover:text-blue-600">Orders</a>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="relative">
+                    <input type="text" placeholder="Search Indian Products..." class="border rounded-full px-4 py-1 text-sm focus:outline-none w-64">
+                    <i class="fa fa-search absolute right-3 top-2 text-gray-400"></i>
+                </div>
+                <button class="relative" onclick="toggleCart()">
+                    <i class="fa fa-shopping-cart text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient text-white py-20 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-5xl font-bold mb-6">India's Premium <br><span class="text-yellow-400">Tech & Lifestyle</span> Store</h2>
+                <p class="text-lg mb-8 opacity-90">Get the best deals on authentic products. Fast delivery across India.</p>
+                <button class="bg-white text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition">Shop Now</button>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg" class="rounded-2xl shadow-2xl" alt="Banner">
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-12 px-4">
+        <h3 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Featured Products</h3>
+        
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            </div>
+    </main>
+
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-[60] p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold">Your Cart</h2>
+            <button onclick="toggleCart()" class="text-2xl">&times;</button>
+        </div>
+        <div id="cart-items" class="space-y-4 overflow-y-auto h-3/4">
+            <p class="text-gray-500">Cart is empty</p>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full p-6 bg-gray-50">
+            <div class="flex justify-between font-bold text-lg mb-4">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700">Checkout Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
